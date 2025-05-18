@@ -1,43 +1,110 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Future Color Mengsimulator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Color</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
+    <!-- HTML: Top-down layout start met ingrediënt aanmaken -->
+    <section id="ingredient-section">
+        <h2>Ingrediënt Aanmaken</h2>
+        <form id="ingredient-form">
+            <label>
+                Minimale mengtijd (ms):
+                <select name="mixTime" required>
+                    <option value="" disabled selected>Kies mengtijd</option>
+                    <option value="50">50 ms</option>
+                    <option value="100">100 ms</option>
+                    <option value="200">200 ms</option>
+                    <option value="300">300 ms</option>
+                    <option value="500">500 ms</option>
+                </select>
+            </label>
 
-  <h1>Future Color Mengsimulator</h1>
+            <label>
+                Mengsnelheid:
+                <select name="mixSpeed" required>
+                    <option value="" disabled selected>Kies mengsnelheid</option>
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                </select>
+            </label>
 
-  <section id="ingredienten-maker">
-    <h2>Ingrediënt aanmaken</h2>
-    <form id="ingredient-form">
-      <label>Mengsnelheid: <input type="number" name="snelheid" required></label>
-      <label>Mengtijd (ms): <input type="number" name="tijd" required></label>
-      <label>Kleur (RGB of HSL): <input type="text" name="kleur" required></label>
-      <label>Structuur:
-        <select name="structuur">
-          <option>korrelig</option>
-          <option>grof korrelig</option>
-          <option>glad</option>
-          <option>slijmerig</option>
-        </select>
-      </label>
-      <button type="submit">Maak ingrediënt</button>
-    </form>
-  </section>
 
-  <section id="ingredienten-overzicht">
-    <h2>Ingrediënten</h2>
-    <div id="ingredienten-container"></div>
-  </section>
+            <label>
+                Kleur:
+                <input type="color" name="colorValue" required />
+            </label>
+            <label>
+                Structuur:
+                <select name="texture">
+                    <option value="korrelig">Korrelige structuur</option>
+                    <option value="grof">Grof korrelig</option>
+                    <option value="glad">Glad</option>
+                    <option value="slijmerig">Slijmerig</option>
+                </select>
+            </label>
+            <button type="submit">Ingrediënt toevoegen</button>
+        </form>
+    </section>
 
-  <section id="potten-sectie">
-    <h2>Potten</h2>
-    <button id="nieuwe-pot">Nieuwe pot</button>
-    <div id="potten-container"></div>
-  </section>
 
-  <script src="script.js"></script>
+    <!-- Hier komen de aangemaakte ingrediënten -->
+    <section id="ingredient-list">
+        <h3>Gemaakte Ingrediënten</h3>
+        <div id="ingredients-container"></div>
+    </section>
+    <hr>
+    <section id="potten-section">
+        <h2>Potten</h2>
+        <button id="add-pot">Voeg pot toe</button>
+        <div id="potten-container"></div>
+    </section>
+
+    <hr>
+    <section id="machine-section">
+        <h2>Mengmachines</h2>
+        <form id="machine-form">
+            <label>
+                Mengsnelheid:
+                <select name="mixSpeed" required>
+                    <option value="" disabled selected>Kies mengsnelheid</option>
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                </select>
+            </label>
+            <label>
+                Mengduur (ms):
+                <select name="mixTime" required>
+                    <option value="" disabled selected>Kies mengtijd</option>
+                    <option value="500">500 ms</option>
+                    <option value="1000">1000 ms</option>
+                    <option value="1500">1500 ms</option>
+                    <option value="2000">2000 ms</option>
+                </select>
+            </label>
+            <button type="submit">Voeg machine toe</button>
+        </form>
+        <div id="machine-container"></div>
+    </section>
+
+
+
+    <script src="ingredients.js"></script>
+    <script src="pots.js"></script>
+    <script src="machines.js"></script>
+
 </body>
+
 </html>
