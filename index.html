@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Future Color Mengsimulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Future Color Mengsimulator</h1>
+
+  <section id="ingredienten-maker">
+    <h2>Ingrediënt aanmaken</h2>
+    <form id="ingredient-form">
+      <label>Mengsnelheid: <input type="number" name="snelheid" required></label>
+      <label>Mengtijd (ms): <input type="number" name="tijd" required></label>
+      <label>Kleur (RGB of HSL): <input type="text" name="kleur" required></label>
+      <label>Structuur:
+        <select name="structuur">
+          <option>korrelig</option>
+          <option>grof korrelig</option>
+          <option>glad</option>
+          <option>slijmerig</option>
+        </select>
+      </label>
+      <button type="submit">Maak ingrediënt</button>
+    </form>
+  </section>
+
+  <section id="ingredienten-overzicht">
+    <h2>Ingrediënten</h2>
+    <div id="ingredienten-container"></div>
+  </section>
+
+  <section id="potten-sectie">
+    <h2>Potten</h2>
+    <button id="nieuwe-pot">Nieuwe pot</button>
+    <div id="potten-container"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
